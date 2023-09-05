@@ -1,0 +1,52 @@
+<div class="center-table mt-8 h-screen">
+  <!-- <p class="text-center font-semibold text-3xl text-blue-600">CARS - LIST</p> -->
+  <p>CARS - LIST</p>
+
+  <app-add-btn [url]="routerLink"></app-add-btn>
+
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+
+    <app-search (searchChanged)="onSearchChanged($event)"></app-search>
+
+    <table class="w-full text-sm text-left">
+      <thead class="text-xs">
+        <tr>
+          <th scope="col" class="px-6 py-3">Name</th>
+          <th scope="col" class="px-6 py-3">Model</th>
+          <th scope="col" class="px-6 py-3">Color</th>
+          <th scope="col" class="px-6 py-3">Year</th>
+          <th scope="col" class="px-6 py-3">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let car of carDetails | filter : search let i = index" [appHighlight]="i"
+          
+        >
+          <td class="px-6 py-4">
+            <div class="flex items-center">
+              <img
+                class="h-10 w-10 rounded-full mr-2"
+                src="{{ car.image }}"
+                alt=""
+              />
+              <span class="">{{ car.make_id }}</span>
+            </div>
+          </td>
+          <td class="px-6 py-4">
+            {{ car.model }}
+          </td>
+          <td class="px-6 py-4">
+            {{ car.color }}
+          </td>
+          <td class="px-6 py-4">
+            {{ car.year }}
+          </td>
+          <td class="px-6 py-4">
+            {{ car.price }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

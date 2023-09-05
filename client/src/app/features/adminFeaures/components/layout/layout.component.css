@@ -1,0 +1,19 @@
+/* Set up a common layout using Flexbox */
+.main-container {
+    display: flex;
+    height: 100vh; /* Adjust this value to set the height of the container */
+  }
+  
+  .sidebar {
+   min-height: 100%;
+   
+    padding: 20px;
+    /* You can add other styles like positioning, etc., for the sidebar */
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    /* You can add other styles like positioning, etc., for the main content */
+  }
+  

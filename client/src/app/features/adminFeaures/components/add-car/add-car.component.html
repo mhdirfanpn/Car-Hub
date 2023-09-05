@@ -1,0 +1,150 @@
+<div class="flex flex-1 flex-col justify-center px-6">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <h2
+      class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
+    >
+      Add Cars
+    </h2>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="space-y-6" [formGroup]="addForm" (ngSubmit)="addCar()">
+      <div>
+        <label
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Make_id
+        </label>
+        <div class="mt-2">
+          <input
+            formControlName="make_id"
+            type="text"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+          <div *ngIf="addForm.get('make_id')?.invalid && addForm.get('make_id')?.touched" class="error">
+            maker name is required
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Model
+        </label>
+        <div class="mt-2">
+          <input
+            formControlName="model"
+            type="text"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Year
+        </label>
+        <div class="mt-2">
+          <input
+          formControlName="year"
+            type="number"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Color
+        </label>
+        <div class="mt-2">
+          <input
+            formControlName="color"
+            type="text"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Price
+        </label>
+        <div class="mt-2">
+          <input
+          formControlName="price"
+            type="number"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          City
+        </label>
+        <div class="mt-2">
+          <input
+          formControlName="city"
+            type="text"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          htmlFor="email"
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          State
+        </label>
+        <div class="mt-2">
+          <input
+          formControlName="state"
+            type="text"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="block text-sm font-medium leading-6 text-gray-900"
+        >
+          Image
+        </label>
+        <div class="mt-2">
+          <input
+            type="file"
+            name="file"
+            formControlName="image"
+            (change)="onImageSelected($event)"
+            alt="productImg"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+          <div *ngIf="addForm.get('image')?.invalid && addForm.get('image')?.touched" class="error">
+            image is required
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button
+          type="submit"
+          class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Add Product
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
